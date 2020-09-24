@@ -1,58 +1,57 @@
 // Assignment Code
 //variable is indexing generate
-var generateBtn = document.querySelector("#generate");
-console.log("#generate");
+// var generateBtn = document.querySelector("#generate");
+// console.log("#generate");
 
 var passLength = prompt(
   "New password: Choose a length between 8 and 128 characters."
 );
 var charType = prompt(
-  "Character types to include: lowercase, uppercase, and special characters."
+  "Character types to include: lowercase, uppercase, and special."
 );
-var pass1 = " ";
 
 console.log("-----");
-console.log(pass1);
-console.log(passLength);
-console.log(charType);
+console.log(passLength); //prompt for password length
+console.log(charType); //prompt answer for character type
 console.log("------");
 
-var options = "adcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%&-+=_";
-console.log(options);
+var optionsLower = "adcdefghijklmnopqrstuvwxyz";
+var optionsUpper = "BCDEFGHIJKLMNOPQRSTUVWXYZ";
+var optionsSpecial = "~!@#$%&-+=_";
+var passOne = " ";
+var finalOptions;
 
-for (i = 0; i < length.passLength; i++) {
-  var passNum = Math.round(Math.random() * passLength + 1);
+var optionsLowerUpper = "adcdefghijklmnopqrstuvwxyzBCDEFGHIJKLMNOPQRSTUVWXYZ";
+var optionsLowerSpecial = "adcdefghijklmnopqrstuvwxyz~!@#$%&-+=_";
+var optionsUpperSpecial = "BCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%&-+=_";
 
-  var pass1 = options.charAt(passNum);
+if (charType === ("lowercase" + "uppercase")) {
+  finalOptions = optionsLowerUpper;
+} else if (charType === ("lowercase" + "special")) {
+  finalOptions = optionsLowerSpecial;
+} else if (charType === ("uppercase" + "special") {
+  finalOptions = optionsUpperSpecial;
 }
 
-console.log(passNum);
+if (charType === "lowercase") {
+  finalOptions = optionsLower;
+} else if (charType === "uppercase") {
+  finalOptions = optionsUpper;
+} else if (charType === "special") {
+  finalOptions = optionsSpecial;
+}
 
-// if (charType === "lowercase") {
-//      var passChar = (toLowerCase);
-// } if else (charType === "uppercase") {
-//     var passChar = (toUpperCase)
+console.log(finalOptions); //testing final options
 
-// } if else (charType === "special characters"){
-//        var passChar = ()
-// }
+// var finalOptions;
 
-//  var options = "abcdefghijklmnopqrstuvwxyz~!@#$%&-+=_"
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-// var specialChar = ["~", ""
-// ]
-
-//
-
-// alert("Here is your new password" + ...)
+for (i = 0; i < passLength; i++) {
+  var passNum = Math.floor(Math.random() * passLength + 1);
+  ///////
+  console.log(passNum); //ensures we are getting # random numbers
+  //////
+  passOne += finalOptions.charAt(passNum);
+  /////////charAt returns character at the specified index of the string
+  console.log(passOne);
+  // alert("Your new password is: " + passOne); //ensures we are getting a string of passLength with random values
+}
