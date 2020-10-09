@@ -55,10 +55,8 @@ for (i = 0; i < passLength; i++) {
   // alert("Your new password is: " + passOne); //ensures we are getting a string of passLength with random values
 }
 alert("This is your random password: " + passOne);
-// ..addEventListener("click", passOne);
 
-///Didnt get DOM to work
-var generate = document.getElementById("generate");
-console.log(generate);
+///Append to random Password to DOM
+$("#password").append(passOne);
 
-generate.children[0].textContent = passOne;
+//generate password on click
